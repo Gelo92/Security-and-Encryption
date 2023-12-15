@@ -1,0 +1,24 @@
+function [ OutVec ] = Q2( ~ )
+%Encryption  1
+disp('First Encryption')
+A=hexToBinaryVector('6C31CF791B12932A', 64);
+B=hexToBinaryVector('51043F77F9E9E50B', 64);
+binaryVectorToHex(Encrypt(A,B, 1, 1))
+%Encryption  2
+disp('Second Encryption')
+C=hexToBinaryVector('AB7C3ED2E238A947', 64);
+D=hexToBinaryVector('145297E2D918921B', 64);
+binaryVectorToHex(Encrypt(C,D, 1, 1))
+%Decryption  1
+disp('First Decryption')
+E=hexToBinaryVector('2B75D7C9704BDC53', 64);
+F=hexToBinaryVector('A5C516D871971C50', 64);
+binaryVectorToHex(Encrypt(E,F, 0, 1))
+%Decryption  2
+disp('Seconds Decryption')
+G = hexToBinaryVector('A190A87B3F9293AA', 64);
+H = hexToBinaryVector('9D71BDF38CA994FF', 64);
+binaryVectorToHex(Encrypt(G,H, 0, 1))
+OutVec = 0 ;
+end
+
